@@ -278,24 +278,24 @@ Given
 
 When участники именуют сценарии, выполняют команды и анализируют их вывод и поведение
 ----
-- Сценарий "Как ...?"
+- Сценарий "Как посмотреть имиджи?"
 ```shell
 podman image ls # TODO: собственные пометки участников для будущего использования в проектах
 ```
 
-- Сценарий "Как ...?"
+- Сценарий "Как стянуть имидж?"
 ```shell
 podman image pull {{ registry-host }}/{{ os-images-path }}/alpine:3.14
 podman image ls
 ```
 
-- Сценарий "Как ...?"
+- Сценарий "Как посмотреть историю и мету?"
 ```shell
 podman image history {{ registry-host }}/{{ os-images-path }}/alpine:3.14
 podman image inspect {{ registry-host }}/{{ os-images-path }}/alpine:3.14 [| jq]
 ```
 
-- Сценарий "Как ...?"
+- Сценарий "Как изменить имидж?"
 ```shell
 podman container run --name demo -it {{ registry-host }}/{{ os-images-path }}/alpine:3.14
 /# touch side-effect.txt
@@ -305,18 +305,18 @@ podman container commit demo {{ registry-host }}/container-training-docker/{{ re
 podman image ls
 ```
 
-- Сценарий "Как ...?"
+- Сценарий "Как тегировать?"
 ```shell
 podman image tag {{ registry-host }}/container-training-docker/{{ registry-account }}/demo:latest {{ registry-host }}/container-training-docker/{{ registry-account }}/demo:1.0.0
 podman image ls
 ```
 
-- Сценарий "Как ...?"
+- Сценарий "Как пушить?"
 ```shell
 podman image push {{ registry-host }}/container-training-docker/{{ registry-account }}/demo:1.0.0
 ```
 
-- Сценарий "Как ...?"
+- Сценарий "Как удалить и всё почистить?"
 ```shell
 podman image ls
 podman container rm demo
